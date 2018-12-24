@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TerminalApp</string>
+
+    <!-- 0 screen-->
+    <string name="companyLabel">COMPANY</string>
+    <string name="selectAppLanguageLabel">Language</string>
+    <string name="selectAppLanguageLabel2">Language</string>
+    <string name="selectAppCompanyLabel">Select company</string>
+    <string name="selectAppCompanyLabel2">SELECT COMPANY</string>
+    <string name="adminPasswordLabel">ADMIN PASSWORD</string>
+    <string name="passwordHiddenLabel">Tap here to enter password</string>
+    <string name="companyHiddenLabel">Tap here to select company</string>
+    <string name="okLabel">OK</string>
+    <string name="doneLabel">DONE</string>
+    <string name="updateLabel">UPDATE</string>
+    <string name="exitLabel">EXIT</string>
+
+    <string name="notSelectLang">Please select app language</string>
+    <string name="notSelectCompany">Please select company</string>
+    <string name="notEnterPassword">Please enter password</string>
+    <string name="emptyList">The list is empty</string>
+
+    <!-- 1 screen -->
+    <string name="statusOnLabel">ONLINE</string>
+    <string name="statusOffLabel">OFFLINE</string>
+    <string name="vehicleLabel">VEHICLE</string>
+    <string name="vehicleHiddenLabel">Tap here to select vehicle</string>
+    <string name="routeLabel">ROUTE</string>
+    <string name="routeHiddenLabel">Tap here to select route</string>
+    <string name="tripLabel">TRIP</string>
+    <string name="tripHiddenLabel">Tap here to select trip</string>
+    <string name="pinLabel">PIN</string>
+    <string name="pinHiddenLabel">Tap here to enter pin</string>
+    <string name="startTripLabel">START TRIP</string>
+    <string name="invalidPinLabel">Invalid pin</string>
+    <string name="notSelectVehicleLabel">Please select vehicle</string>
+    <string name="notSelectRouteLabel">Please select route</string>
+    <string name="notSelectTripLabel">Please select trip</string>
+    <string name="notEnterPinLabel">Please enter PIN</string>
+    <string name="vehicleTitleLabel">SELECT VEHICLE</string>
+    <string name="routeTitleLabel">SELECT ROUTE</string>
+    <string name="tripTitleLabel">SELECT TRIP</string>
+
+    <!--item trip screen-->
+    <string name="finishTripLabel">FINISH TRIP</string>
+    <string name="stewardLabel">STEWARD:</string>
+    <string name="nowLabel">NOW: </string>
+    <string name="nextLabel">NEXT: </string>
+    <string name="seatingLabel">SEATS: </string>
+    <string name="offlinePassengerLabel">Offline</string>
+    <string name="boardedPassengerLabel">BOARDED</string>
+    <string name="boardOfflineLabel">Board offline</string>
+    <string name="sellTicketLabel">Sell ticket</string>
+    <string name="cancelLabel">Cancel</string>
+    <string name="setLabel">Set</string>
+    <string name="finishTripQuestionLabel">Are you sure you want to finish trip?</string>
+    <string name="stationDialogLabel">Enter station</string>
+
+    <!--passenger details screen-->
+    <string name="passengerDetailsLabel">PASSENGER DETAILS</string>
+    <string name="genderLabel">GENDER:</string>
+    <string name="maleLabel">Male</string>
+    <string name="femaleLabel">Female</string>
+    <string name="whoLabel">WHO:</string>
+    <string name="foreignerLabel">Foreigner</string>
+    <string name="localLabel">Local</string>
+    <string name="ageLabel">AGE:</string>
+    <string name="stationLabel">STATION</string>
+    <string name="statusLabel">STATUS:</string>
+    <string name="checkIn">Check In</string>
+    <string name="checkOut">Check Out</string>
+
+    <string name="notSelectGenderLabel">Please select gender</string>
+    <string name="notSelectWhoLabel">Please select who</string>
+    <string name="notSelectAgeLabel">Please select age</string>
+    <string name="notSelectStationLabel">Please select station</string>
+
+    <!--message-->
+    <string name="no_internet_connection">You have no internet connection</string>
+    <string name="oopsError">Oops, Error</string>
+    <string name="oops">Oops...</string>
+    <string name="serverApiErrorMessage">Server API error. please try again later.</string>
+    <string name="networkErrorMessage">Can\'t connect. Please check your internet connection.</string>
+
+    <!--text format-->
+    <string name="durationString" formatted="false">(%sh %sm)</string>
+    <string name="selectItem" formatted="false">" @ "%s</string>
+    <string name="stewardShow" formatted="false">%s" @ "</string>
+    <string name="tripPassenger" formatted="false">%s - %s</string>
+
+    <!--date/time-->
+    <string name="MonLabel">Mon</string>
+    <string name="TueLabel">Tue</string>
+    <string name="WedLabel">Wed</string>
+    <string name="ThuLabel">Thu</string>
+    <string name="FriLabel">Fri</string>
+    <string name="SatLabel">Sat</string>
+    <string name="SunLabel">Sun</string>
+
+    <string name="JanLabel">January</string>
+    <string name="FebLabel">February</string>
+    <string name="MarLabel">March</string>
+    <string name="AprLabel">April</string>
+    <string name="MayLabel">May</string>
+    <string name="JunLabel">June</string>
+    <string name="JulLabel">July</string>
+    <string name="AugLabel">August</string>
+    <string name="SepLabel">September</string>
+    <string name="OctLabel">October</string>
+    <string name="NovLabel">November</string>
+    <string name="DecLabel">December</string>
+
+</resources>

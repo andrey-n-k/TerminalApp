@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="#ffffffff"
+        >
+
+    <TextView android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:layout_width="0dp"
+              android:layout_marginTop="5dp"
+              android:id="@+id/station"
+              android:gravity="left"
+              android:paddingLeft="9dp"
+              android:paddingTop="3dp"
+              android:paddingBottom="3dp"
+              style="@style/TerminalApp.text.main"
+              android:textColor="#ff000000"
+            />
+
+    <ImageView android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="5dp"
+               android:layout_alignParentRight="true"
+               android:visibility="invisible"
+               android:id="@+id/check"
+               android:src="@drawable/checkbox_image"/>
+
+</LinearLayout>

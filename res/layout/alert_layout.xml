@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#70000000"
+        >
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:gravity="center_horizontal"
+            android:background="#A0FFFFFF"
+            >
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:id="@+id/title"
+                android:textColor="#ffffffff"
+                android:visibility="gone"
+                android:textSize="17sp"
+                />
+
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:id="@+id/message"
+                android:background="#ff696969"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                />
+
+        <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:id="@+id/input"
+                android:textSize="17sp"
+                android:maxLines="6"
+                android:textStyle="bold"
+                />
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                >
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:id="@+id/leftBtn"
+                    android:textColor="#ffFFFFFF"
+                    android:textSize="17sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/green_btn"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/okLabel"
+                    android:gravity="center_horizontal"
+                    android:singleLine="true"
+                    />
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:id="@+id/rightBtn"
+                    android:textColor="#ffFFFFFF"
+                    android:textSize="17sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/green_btn"
+                    android:layout_marginLeft="5dp"
+                    android:visibility="gone"
+                    android:gravity="center_horizontal"
+                    android:singleLine="true"
+                    />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

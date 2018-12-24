@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:id="@+id/wheel_layout"
+                android:gravity="center"
+                android:background="#AB000000"
+                android:layout_height="fill_parent">
+
+    <LinearLayout android:layout_height="wrap_content"
+                  android:layout_width="fill_parent"
+                  android:layout_margin="10dp"
+                  android:background="#FFefefef"
+                  android:padding="10dp"
+                  android:orientation="vertical">
+        <TextView android:layout_height="wrap_content"
+                  android:layout_width="fill_parent"
+                  android:gravity="center"
+                  android:id="@+id/name"
+                  style="@style/TerminalApp.text.main.bold.big"
+                  android:text="Ivan Petrov"/>
+        <TextView android:layout_height="wrap_content"
+                  android:layout_width="fill_parent"
+                  android:layout_marginTop="5dp"
+                  android:id="@+id/trip"
+                  android:gravity="center"
+                  style="@style/TerminalApp.text.main"
+                  android:text="NOVOSIB - MOSCOW"/>
+        <LinearLayout android:layout_height="wrap_content"
+                      android:layout_width="fill_parent"
+                      android:layout_marginTop="10dp"
+                      android:orientation="horizontal">
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      style="@style/TerminalApp.text.main.bold.big"
+                      android:id="@+id/genderLabel"
+                      android:text="@string/genderLabel"/>
+            <TextView android:layout_height="wrap_content"
+                      android:layout_marginLeft="5dp"
+                      android:layout_width="wrap_content"
+                      android:id="@+id/gender"
+                      style="@style/TerminalApp.text.main"
+                      android:text="Male"/>
+        </LinearLayout>
+        <LinearLayout android:layout_height="wrap_content"
+                      android:layout_width="fill_parent"
+                      android:layout_marginTop="5dp"
+                      android:orientation="horizontal">
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      style="@style/TerminalApp.text.main.bold.big"
+                      android:id="@+id/ageLabel"
+                      android:text="@string/ageLabel"/>
+            <TextView android:layout_height="wrap_content"
+                      android:layout_marginLeft="5dp"
+                      android:layout_width="wrap_content"
+                      android:id="@+id/age"
+                      style="@style/TerminalApp.text.main"
+                      android:text="30"/>
+        </LinearLayout>
+        <LinearLayout android:layout_height="wrap_content"
+                      android:layout_width="fill_parent"
+                      android:layout_marginTop="5dp"
+                      android:orientation="horizontal">
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:id="@+id/whoLabel"
+                      style="@style/TerminalApp.text.main.bold.big"
+                      android:text="@string/whoLabel"/>
+            <TextView android:layout_height="wrap_content"
+                      android:layout_marginLeft="5dp"
+                      android:layout_width="wrap_content"
+                      style="@style/TerminalApp.text.main"
+                      android:id="@+id/who"
+                      android:text="Local"/>
+        </LinearLayout>
+        <LinearLayout android:layout_height="45dp"
+                      android:layout_width="fill_parent"
+                      android:orientation="horizontal"
+                      android:gravity="center_vertical"
+                >
+            <TextView android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:id="@+id/statusLabel"
+                      style="@style/TerminalApp.text.main.bold.big"
+                      android:text="@string/statusLabel"/>
+
+            <TextView android:layout_height="wrap_content"
+                      android:layout_marginLeft="5dp"
+                      android:layout_width="0dp"
+                      android:layout_weight="1"
+                      android:id="@+id/status"
+                      style="@style/TerminalApp.text.main"
+                    />
+
+            <Button android:layout_width="100dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/checkIn"
+                    android:text="@string/checkIn"
+                    style="@style/TerminalApp.text.main.whiteBold.small"
+                    android:background="@drawable/green_btn"
+                    android:visibility="gone"
+                    />
+
+            <Button android:layout_width="100dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/checkOut"
+                    android:text="@string/checkOut"
+                    style="@style/TerminalApp.text.main.whiteBold.small"
+                    android:background="@drawable/green_btn"
+                    android:visibility="gone"
+                    />
+        </LinearLayout>
+        <LinearLayout android:layout_height="wrap_content"
+                      android:gravity="center"
+                      android:layout_width="fill_parent">
+            <Button android:layout_width="100dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/okBtn"
+                    android:text="@string/okLabel"
+                    style="@style/TerminalApp.text.main.whiteBold.small"
+                    android:background="@drawable/green_btn"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

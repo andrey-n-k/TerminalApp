@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:background="@drawable/background"
+                  android:layout_height="fill_parent">
+        <!--header-->
+        <RelativeLayout android:layout_height="@dimen/header_height"
+                        android:layout_width="fill_parent"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="10dp"
+                        android:background="@drawable/header">
+            <ImageView android:layout_height="fill_parent"
+                       android:layout_width="wrap_content"
+                       android:layout_alignParentLeft="true"
+                       android:scaleType="fitStart"
+                       android:src="@drawable/label"/>
+
+            <LinearLayout android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentRight="true"
+                            android:orientation="horizontal"
+                            android:clickable="true"
+                            android:padding="5dp"
+                            android:id="@+id/languageBtn"
+                            android:background="@drawable/lang_btn">
+                <TextView android:layout_height="fill_parent"
+                          android:gravity="center_vertical"
+                          android:singleLine="true"
+                          android:layout_width="wrap_content"
+                          android:id="@+id/selectAppLanguageLabel"
+                          android:text="dfgdfefefefefefeeg"
+                          style="@style/TerminalApp.text.main.small.white"/>
+                <RelativeLayout android:layout_width="wrap_content"
+                              android:layout_height="fill_parent">
+                    <ImageView android:layout_width="wrap_content"
+                               android:scaleType="centerCrop"
+                               android:id="@+id/lang_image"
+                               android:layout_marginLeft="5dp"
+                               android:visibility="gone"
+                               android:layout_height="fill_parent"
+                               android:src="@drawable/en"/>
+                    <TextView android:layout_height="fill_parent"
+                              android:layout_width="wrap_content"
+                              android:layout_marginLeft="5dp"
+                              android:gravity="center"
+                              android:id="@+id/lang_text"
+                              style="@style/TerminalApp.text.main.white"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+        <!--&lt;!&ndash;hack&ndash;&gt;-->
+        <!--<EditText android:layout_width="fill_parent"-->
+                  <!--android:focusableInTouchMode="true"-->
+                  <!--android:layout_height="0dp"/>-->
+        <!--content-->
+        <ScrollView android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+            <LinearLayout android:layout_height="wrap_content"
+                          android:layout_width="fill_parent"
+                          android:orientation="vertical"
+                          android:padding="10dp">
+                <!--clock-->
+                <LinearLayout android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:paddingTop="5dp"
+                                android:background="@drawable/clock_background">
+                    <TextView android:layout_height="wrap_content"
+                              android:layout_width="fill_parent"
+                              android:gravity="center"
+                              android:id="@+id/date"
+                              style="@style/TerminalApp.text.clock.small"/>
+                    <TextView android:layout_height="wrap_content"
+                              android:layout_width="fill_parent"
+                              android:gravity="center"
+                              android:id="@+id/time"
+                              style="@style/TerminalApp.text.clock.big"/>
+
+                </LinearLayout>
+                <!--company-->
+                <LinearLayout android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="20dp"
+                                android:background="@drawable/item_background"
+                                android:orientation="vertical">
+                    <TextView android:layout_height="wrap_content"
+                              android:layout_width="fill_parent"
+                              android:id="@+id/companyLabel"
+                              style="@style/TerminalApp.text.main"/>
+                    <RelativeLayout android:layout_height="35dp"
+                                  android:layout_width="fill_parent"
+                                  android:clickable="true"
+                                  android:id="@+id/companyBtn"
+                                  android:layout_marginTop="5dp"
+                                  android:background="@drawable/spinner_type_1">
+                        <TextView android:layout_height="fill_parent"
+                                  android:padding="5dp"
+                                  android:layout_width="fill_parent"
+                                  android:gravity="center"
+                                  android:id="@+id/companyHiddenLabel"
+                                  style="@style/TerminalApp.text.main.hidden"/>
+                        <TextView android:layout_height="fill_parent"
+                                  android:padding="5dp"
+                                  android:layout_width="fill_parent"
+                                  android:id="@+id/mainText"
+                                  android:gravity="center"
+                                  android:visibility="gone"
+                                  style="@style/TerminalApp.text.main.bold"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <!--password-->
+                <LinearLayout android:layout_width="fill_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_marginTop="20dp"
+                              android:paddingLeft="20dp"
+                              android:paddingRight="20dp"
+                              android:paddingTop="8dp"
+                              android:paddingBottom="20dp"
+                              android:background="@drawable/item_background"
+                              android:orientation="vertical">
+                    <TextView android:layout_height="wrap_content"
+                              android:layout_width="fill_parent"
+                              style="@style/TerminalApp.text.main"
+                              android:id="@+id/adminPasswordLabel"/>
+                    <EditText android:layout_height="35dp"
+                              android:layout_width="fill_parent"
+                              android:gravity="center"
+                              android:id="@+id/password"
+                              android:layout_marginTop="5dp"
+                              android:imeOptions="actionDone"
+                              android:inputType="textPassword"
+                              android:background="@drawable/spinner_type_1"
+                              style="@style/TerminalApp.text.main"/>
+
+                </LinearLayout>
+                <!--button-->
+                <LinearLayout android:layout_height="wrap_content"
+                              android:orientation="horizontal"
+                              android:layout_width="fill_parent">
+                    <Button android:layout_width="0dp"
+                            android:layout_height="@dimen/big_btn_height"
+                            android:layout_weight="1"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginTop="20dp"
+                            style="@style/TerminalApp.text.main.whiteBold"
+                            android:id="@+id/exitBtn"
+                            android:background="@drawable/orange_btn"/>
+                    <Button android:layout_width="0dp"
+                            android:layout_height="@dimen/big_btn_height"
+                            android:layout_weight="1"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginLeft="5dp"
+                            style="@style/TerminalApp.text.main.whiteBold"
+                            android:id="@+id/doneBtn"
+                            android:background="@drawable/green_btn"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

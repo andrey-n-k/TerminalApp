@@ -1,0 +1,80 @@
+package com.arellomobile.android.libs.cache.ormlite.stmt.mapped;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.arellomobile.android.libs.cache.ormlite.db.DatabaseType;
+import com.arellomobile.android.libs.cache.ormlite.field.FieldType;
+import com.arellomobile.android.libs.cache.ormlite.stmt.QueryBuilder.InternalQueryBuilder;
+import com.arellomobile.android.libs.cache.ormlite.stmt.SelectArg;
+import com.arellomobile.android.libs.cache.ormlite.support.DatabaseConnection;
+import com.arellomobile.android.libs.cache.ormlite.table.TableInfo;
+
+/**
+ * Mapped statement for querying for an object by its ID.
+ * 
+ * @author graywatson
+ */
+public class MappedQueryForId<T, ID> extends BaseMappedQuery<T, ID> {
+
+	private final String label;
+
+	protected MappedQueryForId(TableInfo<T, ID> tableInfo, String statement, List<FieldType> argFieldTypeList,
+			List<FieldType> resultFieldTypeList, String label) {
+		super(tableInfo, statement, argFieldTypeList, resultFieldTypeList);
+		this.label = label;
+	}
+
+	/**
+	 * Query for an object in the database which matches the id argument.
+	 */
+	public T execute(DatabaseConnection databaseConnection, ID id) throws SQLException {
+		Object[] args = new Object[] { convertIdToFieldObject(id) };
+		/* @SuppressWarnings("unchecked")*/
+		Object result = databaseConnection.queryForOne(statement, args, new FieldType[] { idField }, this);
+		if (result == null) {
+			logger.debug("{} using '{}' and {} args, got no results", label, statement, args.length);
+		} else if (result == DatabaseConnection.MORE_THAN_ONE) {
+			logger.error("{} using '{}' and {} args, got >1 results", label, statement, args.length);
+			logArgs(args);
+			throw new SQLException(label + " got more than 1 result: " + statement);
+		} else {
+			logger.debug("{} using '{}' and {} args, got 1 result", label, statement, args.length);
+		}
+		logArgs(args);
+		@SuppressWarnings("unchecked")
+		T castResult = (T) result;
+		return castResult;
+	}
+
+	public static <T, ID> MappedQueryForId<T, ID> build(DatabaseType databaseType, TableInfo<T, ID> tableInfo)
+			throws SQLException {
+		List<FieldType> argFieldTypeList = new ArrayList<FieldType>();
+		List<FieldType> resultFieldTypeList = new ArrayList<FieldType>();
+		String statement = buildStatement(databaseType, tableInfo, argFieldTypeList, resultFieldTypeList);
+		return new MappedQueryForId<T, ID>(tableInfo, statement, argFieldTypeList, resultFieldTypeList, "query-for-id");
+	}
+
+	protected static <T, ID> String buildStatement(DatabaseType databaseType, TableInfo<T, ID> tableInfo,
+			List<FieldType> argFieldTypeList, List<FieldType> resultFieldTypeList) throws SQLException {
+		FieldType idField = tableInfo.getIdField();
+		if (idField == null) {
+			throw new SQLException("Cannot query-for-id with " + tableInfo.getDataClass()
+					+ " because it doesn't have an id field");
+		}
+		InternalQueryBuilder<T, ID> qb = new InternalQueryBuilder<T, ID>(databaseType, tableInfo);
+		// this selectArg is ignored here because we pass in the id as a fixed argument
+		SelectArg idSelectArg = new SelectArg();
+		qb.where().eq(idField.getDbColumnName(), idSelectArg);
+		List<SelectArg> selectArgList = new ArrayList<SelectArg>();
+		return qb.buildStatementString(argFieldTypeList, resultFieldTypeList, selectArgList);
+	}
+
+	private void logArgs(Object[] args) {
+		if (args.length > 0) {
+			// need to do the (Object) cast to force args to be a single object
+			logger.trace("{} arguments: {}", label, (Object) args);
+		}
+	}
+}

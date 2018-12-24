@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:background="@drawable/background"
+                  android:layout_height="fill_parent">
+        <!--header-->
+        <LinearLayout android:layout_height="@dimen/header_height"
+                      android:layout_width="fill_parent"
+                      android:orientation="horizontal"
+                      android:background="@drawable/header">
+
+            <RelativeLayout android:layout_height="fill_parent"
+                            android:layout_width="40dp"
+                            android:id="@+id/back_btn"
+                            android:background="@drawable/back_btn"
+                            android:paddingTop="13dp"
+                            android:clickable="true"
+                            android:paddingBottom="13dp">
+                <ImageView android:layout_width="fill_parent"
+                           android:layout_height="fill_parent"
+                           android:src="@drawable/arrow"/>
+            </RelativeLayout>
+
+            <LinearLayout android:layout_height="fill_parent"
+                          android:layout_width="wrap_content"
+                          android:gravity="center_vertical"
+                          android:paddingLeft="5dp"
+                          android:orientation="horizontal">
+                <TextView android:layout_height="wrap_content"
+                          android:layout_width="wrap_content"
+                          android:singleLine="true"
+                          android:ellipsize="end"
+                          android:id="@+id/company_header"
+                          style="@style/TerminalApp.text.main.white"
+                          android:text="Phantip 1970"/>
+            </LinearLayout>
+            <!--time-->
+            <RelativeLayout android:layout_height="fill_parent"
+                            android:layout_width="fill_parent">
+                <LinearLayout android:layout_height="fill_parent"
+                              android:layout_width="wrap_content"
+                              android:gravity="right|center_vertical"
+                              android:layout_alignParentRight="true"
+                              android:orientation="vertical"
+                              android:paddingRight="10dp">
+                    <TextView android:layout_height="wrap_content"
+                              android:layout_width="wrap_content"
+                              android:id="@+id/date"
+                              android:text="Friday 4 May"
+                              android:textSize="13dp"
+                              style="@style/TerminalApp.text.main.whiteBold"/>
+                    <TextView android:layout_height="wrap_content"
+                              android:layout_width="wrap_content"
+                              android:text="10:53"
+                              android:layout_marginLeft="5dp"
+                              android:id="@+id/time"
+                              android:textSize="18dp"
+                              style="@style/TerminalApp.text.main.whiteBold"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+        <ScrollView android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+            <LinearLayout android:layout_height="wrap_content"
+                          android:layout_width="fill_parent"
+                          android:orientation="vertical"
+                          android:paddingTop="10dp"
+                          android:paddingRight="20dp"
+                          android:paddingLeft="20dp">
+                <!--wtf header?-->
+                <LinearLayout android:layout_height="wrap_content"
+                              android:layout_width="fill_parent"
+                              android:gravity="center">
+                    <RelativeLayout android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content">
+                        <TextView android:layout_height="wrap_content"
+                                  android:layout_width="wrap_content"
+                                  android:id="@+id/statusOn"
+                                  style="@style/TerminalApp.text.status.online"
+                                  android:visibility="gone"/>
+                        <TextView android:layout_height="wrap_content"
+                                  android:layout_width="wrap_content"
+                                  android:id="@+id/statusOff"
+                                  style="@style/TerminalApp.text.status.offline"/>
+                    </RelativeLayout>
+                    <TextView android:layout_height="wrap_content"
+                              android:layout_width="wrap_content"
+                              android:id="@+id/current_route"
+                              style="@style/TerminalApp.text.main.bold"/>
+                </LinearLayout>
+                <!--content-->
+                <LinearLayout android:layout_height="wrap_content"
+                              android:layout_marginTop="10dp"
+                              android:paddingLeft="20dp"
+                              android:paddingRight="20dp"
+                              android:paddingTop="8dp"
+                              android:paddingBottom="20dp"
+                              android:background="@drawable/item_background"
+                              android:orientation="vertical"
+                              android:layout_width="fill_parent">
+                    <!--vehicle-->
+                    <TextView android:layout_height="wrap_content"
+                              android:layout_width="fill_parent"
+                              style="@style/TerminalApp.text.main"
+                              android:id="@+id/vehicleLabel"/>
+                    <RelativeLayout android:layout_height="35dp"
+                                    android:layout_width="fill_parent"
+                                    android:clickable="true"
+                                    android:id="@+id/vehicleBtn"
+                                    android:focusable="true"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/spinner_type_1">
+                        <TextView android:layout_height="fill_parent"
+                                  android:padding="5dp"
+                                  android:layout_width="fill_parent"
+                                  android:gravity="center"
+                                  android:id="@+id/vehicleHiddenLabel"
+                                  style="@style/TerminalApp.text.main.hidden"/>
+                        <TextView android:layout_height="fill_parent"
+                                  android:padding="5dp"
+                                  android:layout_width="fill_parent"
+                                  android:id="@+id/vehicleMainText"
+                                  android:gravity="center"
+                                  android:visibility="gone"
+                                  style="@style/TerminalApp.text.main.bold"/>
+                    </RelativeLayout>
+                    <!--route-->
+                    <TextView android:layout_height="wrap_content"
+                              android:layout_width="fill_parent"
+                              android:layout_marginTop="8dp"
+                              android:id="@+id/routeLabel"
+                              style="@style/TerminalApp.text.main"/>
+                    <RelativeLayout android:layout_height="35dp"
+                                    android:layout_width="fill_parent"
+                                    android:clickable="true"
+                                    android:id="@+id/routeBtn"
+                                    android:focusable="true"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/spinner_type_1">
+                        <TextView android:layout_height="fill_parent"
+                                  android:padding="5dp"
+                                  android:layout_width="fill_parent"
+                                  android:gravity="center"
+                                  android:id="@+id/routeHiddenLabel"
+                                  style="@style/TerminalApp.text.main.hidden"/>
+                        <TextView android:layout_height="fill_parent"
+                                  android:padding="5dp"
+                                  android:layout_width="fill_parent"
+                                  android:id="@+id/routeMainText"
+                                  android:gravity="center"
+                                  android:visibility="gone"
+                                  style="@style/TerminalApp.text.main.bold"/>
+                    </RelativeLayout>
+                    <!--trip-->
+                    <TextView android:layout_height="wrap_content"
+                              android:layout_width="fill_parent"
+                              android:layout_marginTop="8dp"
+                              style="@style/TerminalApp.text.main"
+                              android:id="@+id/tripLabel"/>
+                    <RelativeLayout android:layout_height="35dp"
+                                    android:layout_width="fill_parent"
+                                    android:clickable="true"
+                                    android:id="@+id/tripBtn"
+                                    android:focusable="true"
+                                    android:layout_marginTop="5dp"
+                                    android:background="@drawable/spinner_type_1">
+                        <TextView android:layout_height="fill_parent"
+                                  android:padding="5dp"
+                                  android:layout_width="fill_parent"
+                                  android:gravity="center"
+                                  android:id="@+id/tripHiddenLabel"
+                                  style="@style/TerminalApp.text.main.hidden"/>
+                        <TextView android:layout_height="fill_parent"
+                                  android:padding="5dp"
+                                  android:layout_width="fill_parent"
+                                  android:id="@+id/tripMainText"
+                                  android:gravity="center"
+                                  android:visibility="gone"
+                                  style="@style/TerminalApp.text.main.bold"/>
+                    </RelativeLayout>
+                    <!--pin-->
+                    <TextView android:layout_height="wrap_content"
+                              android:layout_width="fill_parent"
+                              android:layout_marginTop="8dp"
+                              style="@style/TerminalApp.text.main"
+                              android:id="@+id/pinLabel"/>
+                    <EditText android:layout_height="35dp"
+                              android:layout_width="fill_parent"
+                              android:gravity="center"
+                              android:id="@+id/pin_view"
+                              android:longClickable="false"
+                              android:layout_marginTop="5dp"
+                              android:imeOptions="actionDone"
+                              android:background="@drawable/spinner_type_1"
+                              android:maxLength="4"
+                              style="@style/TerminalApp.text.main"/>
+                </LinearLayout>
+
+                <!--button-->
+                <Button android:layout_width="fill_parent"
+                                android:layout_height="65dp"
+                                android:layout_marginTop="20dp"
+                                style="@style/TerminalApp.text.main.whiteBold"
+                                android:id="@+id/startTrip"
+                                android:background="@drawable/green_btn"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

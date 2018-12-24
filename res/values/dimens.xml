@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="header_height">44dp</dimen>
+    <dimen name="lang_box_wigth">100dp</dimen>
+    <dimen name="big_btn_height">65dp</dimen>
+</resources>
